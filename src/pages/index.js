@@ -12,6 +12,7 @@ query ReceiptsAll2 {
     nodes {
       name
       title
+      markdown
     }
   }
 }
@@ -25,7 +26,7 @@ class IndexPage extends React.Component {
 
     return ( 
       <Layout>
-        <SEO title="Home" />        
+        <SEO title="Reseptit" />        
         <ReceiptList receipts={receipts}/>
       </Layout>
       );

@@ -1,131 +1,13 @@
+//Main
 @import 'variables';
 @import 'reset';
 @import 'typography';
 @import 'mixins';
+@import 'icons';
+@import 'base';
 
-.padded-container {
-  padding: $default-top-margin $side-margin;
-}
-
-@mixin max-width {
-  max-width: $max-width;
-  margin: 0 auto;
-}
-
-main {
-  @include after( $md-brakepoint ) {
-    @include max-width;
-  }
-}
-
-body {
-  background-color: $primary-color;
-}
-
-header {
-  
-  font-family: $font-family-header;
-  background-color: $primary-color;
-
-  @include after( $md-brakepoint ) {
-    @include max-width;
-  }
-
-  @extend .padded-container;
-
-  a { 
-    font-size: $base-font-size * 2.5;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 8pt;
-    color: $white; 
-  }  
-}
-
-footer {
-
-  color: $white;
-  background-color: $primary-color;
-
-  a {     
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 8pt;
-    color: $white; 
-  }  
-
-  @extend .padded-container;
-
-  @include after( $md-brakepoint ) {
-    @include max-width;
-  }  
-}
-
-nav {
-  padding: 1em $side-margin;
-  background-color: lighten($primary-color, 90%);
-}
-
-.receipt-list {
-  
-  cursor: pointer;
-  font-family: $font-family-regular;  
-  background-color: $receipt-list-background-color;
-
-  &__receipt {
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
-    background-color: $receipt-list-background-color;  
-    padding: 10px $side-margin;
-
-    &:hover {
-      border: solid 1px black;
-      background-color: lighten($color: $receipt-list-background-color, $amount: 0%);      
-    };
-
-    svg {
-      justify-self: end;
-      align-self: center;
-    }
-  }
-
-  a:nth-child(even) &__receipt {
-    background-color: lighten($color: $receipt-list-background-color, $amount: 10%);    
-  }
-
-  a {
-    font-size: $base-font-size;
-    color: $link-color;
-    text-decoration: none;;
-  }
-}
-
-.receipt {
-
-  font-family: $font-family-regular;
-  padding: $side-margin $side-margin;
-  background-color: $white;
-
-  h1 {
-    margin-top: 0.25em;
-    margin-bottom: 0.5em;
-  }
-
-  p {
-    margin: 0.5em 0;
-    line-height: 1.4em;
-  }
-
-  ul {margin: 0;
-  }
-  ul > li {
-    text-indent: -5px;
-    margin-left: 10px;
-  }
-  ul > li:before {
-    content: "- ";    
-    text-indent: -5px;
-  }  
-}
+//Partials
+@import './partials/header';
+@import './partials/receipt-list';
+@import './partials/receipt';
+@import './partials/page-not-found-404';
