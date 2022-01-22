@@ -25,7 +25,7 @@
     "@iconify/icons-mdi": "^1.0.71",
     "@iconify/react": "^1.1.1",
     "marked": "^0.8.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "prettier": "^1.19.1",
     "pubsub-js": "^1.8.0",
     "uuid": "^3.4.0"
